@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coach's Sports Lounge favicon">
+  <rect width="64" height="64" rx="12" fill="#12100d"/>
+  <path d="M10 14h44v36H10z" fill="#1f5f43" stroke="#f5a524" stroke-width="3"/>
+  <path d="M18 22h28M18 30h20M18 38h14" stroke="#f7efe2" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="48" cy="43" r="5" fill="#f5a524"/>
+</svg>

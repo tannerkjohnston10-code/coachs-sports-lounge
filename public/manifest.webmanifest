@@ -1,0 +1,23 @@
+{
+  "name": "Coach's Sports Lounge",
+  "short_name": "Coach Lounge",
+  "description": "A premium sports-media command center for scores, news, transfer portal movement, and coaching notes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#12100d",
+  "theme_color": "#1f5f43",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

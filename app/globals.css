@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 18 17% 7%;
+    --foreground: 42 28% 93%;
+    --card: 20 18% 10%;
+    --card-foreground: 42 28% 93%;
+    --popover: 20 18% 10%;
+    --popover-foreground: 42 28% 93%;
+    --primary: 150 58% 30%;
+    --primary-foreground: 42 28% 96%;
+    --secondary: 24 14% 17%;
+    --secondary-foreground: 42 24% 88%;
+    --muted: 24 11% 22%;
+    --muted-foreground: 37 12% 66%;
+    --accent: 37 92% 54%;
+    --accent-foreground: 21 29% 9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 42 28% 96%;
+    --border: 24 12% 22%;
+    --input: 24 12% 22%;
+    --ring: 37 92% 54%;
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 42 33% 96%;
+    --foreground: 22 24% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 22 24% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 22 24% 12%;
+    --primary: 150 55% 27%;
+    --primary-foreground: 42 28% 96%;
+    --secondary: 36 20% 88%;
+    --secondary-foreground: 22 24% 12%;
+    --muted: 38 18% 86%;
+    --muted-foreground: 25 12% 40%;
+    --accent: 37 92% 48%;
+    --accent-foreground: 21 29% 9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 42 28% 96%;
+    --border: 35 15% 78%;
+    --input: 35 15% 78%;
+    --ring: 37 92% 48%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.35);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .media-panel {
+    @apply border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/25 backdrop-blur-xl transition duration-300;
+  }
+
+  .premium-card-hover {
+    @apply transition duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/[0.07] hover:shadow-2xl hover:shadow-black/30;
+  }
+
+  .live-glow {
+    box-shadow:
+      0 0 0 1px hsl(var(--destructive) / 0.35),
+      0 0 18px hsl(var(--destructive) / 0.3);
+  }
+
+  .live-pulse {
+    animation: live-pulse 1.8s ease-in-out infinite;
+  }
+
+  .ticker-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ticker-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%);
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.16), transparent);
+    animation: ticker-shine 4.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .stadium-light {
+    background:
+      radial-gradient(ellipse at 18% 0%, hsl(var(--accent) / 0.16), transparent 34%),
+      radial-gradient(ellipse at 82% 0%, hsl(var(--primary) / 0.18), transparent 34%),
+      linear-gradient(180deg, hsl(var(--foreground) / 0.045), transparent 28rem);
+  }
+
+  .page-transition {
+    animation: page-rise 420ms ease both;
+  }
+
+  .trophy-badge {
+    @apply rounded-md border border-accent/30 bg-accent/10 text-accent shadow-lg shadow-accent/10;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-md bg-white/[0.08];
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .touch-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--accent) / 0.5) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@keyframes live-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px hsl(var(--destructive) / 0.35),
+      0 0 16px hsl(var(--destructive) / 0.22);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px hsl(var(--destructive) / 0.65),
+      0 0 28px hsl(var(--destructive) / 0.42);
+  }
+}
+
+@keyframes ticker-shine {
+  0%,
+  45% {
+    transform: translateX(-120%);
+  }
+  80%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes page-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-pulse,
+  .ticker-shine::after,
+  .page-transition {
+    animation: none;
+  }
+}
