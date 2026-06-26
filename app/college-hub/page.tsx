@@ -1,6 +1,6 @@
 import {
   ArrowUpRight,
-  Baseball,
+  CircleDot,
   Dumbbell,
   Flame,
   GraduationCap,
@@ -40,7 +40,7 @@ const sportSections = [
   {
     title: "College Baseball / Softball",
     label: "Diamond Board",
-    icon: Baseball,
+    icon: CircleDot,
     lead: "Weekend rotations, bullpen bridges, and power bats set the tone on both diamonds.",
     items: ["SEC weekend arm management", "Softball power rankings shift", "Small-ball packages return"],
   },

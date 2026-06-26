@@ -1,6 +1,6 @@
 # Coach's Sports Lounge
 
-A premium Next.js + TypeScript sports-media dashboard for coaches, fans, and staff-room operators. The app uses mock data today and is structured for future sports scores, news, user preference sync, and real-time updates.
+A premium Next.js + TypeScript sports-media dashboard for coaches, fans, and staff-room operators. This package is prepared for Cloudflare Pages using a static Next.js export.
 
 ## Stack
 
@@ -9,7 +9,7 @@ A premium Next.js + TypeScript sports-media dashboard for coaches, fans, and sta
 - Tailwind CSS
 - shadcn/ui-compatible primitives
 - lucide-react icons
-- Static export for Cloudflare Pages
+- Cloudflare Pages static export
 
 ## Local Setup
 
@@ -38,28 +38,16 @@ The production build writes a static export to `out/`.
 
 ## Cloudflare Pages Deployment
 
-Create a Cloudflare Pages project connected to this repository.
+Create a Cloudflare Pages project connected to your GitHub repository.
 
 Recommended settings:
 
 - Framework preset: `Next.js`
 - Node version: `20`
 - Install command: `npm install`
-- Build command: `npm run check`
+- Build command: `npm run build`
 - Build output directory: `out`
-
-If you prefer faster deploys after CI already ran lint/type checks, use:
-
-```bash
-npm run build
-```
-
-Preview the static export locally after building:
-
-```bash
-npm run build
-npm run preview
-```
+- Root directory: `/` if `package.json` is at the top level of the repo
 
 ## Environment Variables
 
@@ -82,24 +70,6 @@ NEXT_PUBLIC_USER_PREFERENCES_API_KEY=
 ```
 
 The API variables are placeholders for future integrations. The app currently ships with mock data, so API keys are not required for deployment.
-
-## Routes
-
-- `/`
-- `/football`
-- `/basketball`
-- `/baseball`
-- `/hockey`
-- `/soccer`
-- `/track`
-- `/college-hub`
-- `/transfer-portal`
-- `/pro-hub`
-- `/coaches-lounge`
-- `/rankings`
-- `/standings`
-- `/calendar`
-- `/settings`
 
 ## Production Notes
 
